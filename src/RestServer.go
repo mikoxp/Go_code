@@ -6,7 +6,7 @@ import (
 	"html"
 	"log"
 	"encoding/json"
-	db "rest_server/src/mysql"
+	db "Go_code/src/mysql"
 )
 
 func main() {

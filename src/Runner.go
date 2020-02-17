@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	db "rest_server/src/mysql"
+	db "Go_code/src/mysql"
 )
 
 func main() {
