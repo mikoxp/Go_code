@@ -2,19 +2,11 @@ package main
 
 import (
 	"fmt"
-	_ "github.com/go-sql-driver/mysql"
-	db "Go_code/src/mysql"
+	fun "Go_code/src/function"
 )
 
 func main() {
-	fmt.Println(" Go MySQL")
-	var con= db.CreateCon()
-	db.Insert(con,"Test")
-	tasks:=db.GetAll(con)
-	fmt.Println("-------TASKS-----------")
-	fmt.Println(tasks.Len())
-	for temp := tasks.Front(); temp != nil; temp = temp.Next() {
-		fmt.Println(temp.Value.(db.Task).ID)
-
-	}
+	fmt.Println(fun.Add(42, 13))
+	var n int =5
+	fmt.Printf("Factor %d = %d",n, fun.Factor(n))
 }
