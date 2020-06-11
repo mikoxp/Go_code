@@ -23,7 +23,10 @@ func main() {
 	fmt.Println(text)
 	fmt.Println("------------------------")
 
-	//var rectangle=fun.Rectangle{a:5,b:6}
-	var x=fun.Rectangle{A:5,B:6}
-	fun.WriteFigureInfo(x)
+	var rect=fun.Rectangle{A:5,B:6}
+	var square=fun.Square{A:5}
+	var triangle=fun.Triangle{A:6,H:7}
+	fun.WriteFigureInfo(rect)
+	fun.WriteFigureInfo(square)
+	fun.WriteFigureInfo(triangle)
 }

@@ -36,5 +36,5 @@ func (el Triangle) field() float64 {
 func WriteFigureInfo(figure Figure) {
 	fmt.Println(figure)
 	fmt.Println(reflect.TypeOf(figure))
-	fmt.Printf("Figure field= %.2f", figure.field())
+	fmt.Printf("Figure field= %.2f\n", figure.field())
 }
