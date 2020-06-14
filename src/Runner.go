@@ -4,6 +4,7 @@ import (
 	"fmt"
 	fun "Go_code/src/function"
 	"time"
+	factory "Go_code/src/write_factory"
 )
 
 func main() {
@@ -29,4 +30,11 @@ func main() {
 	fun.WriteFigureInfo(rect)
 	fun.WriteFigureInfo(square)
 	fun.WriteFigureInfo(triangle)
+
+	fmt.Println("------------------------")
+	var w1=factory.WriteObject{Place:"FILE",Data:"DATA",FileName:fileName}
+	var w2=factory.WriteObject{Place:"OUT",Data:"DATA"}
+	factory.WriteTextToPlace(w1)
+	factory.WriteTextToPlace(w2)
+
 }
