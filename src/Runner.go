@@ -37,4 +37,9 @@ func main() {
 	factory.WriteTextToPlace(w1)
 	factory.WriteTextToPlace(w2)
 
+	fmt.Println("---------FILES IN DIRECTORY---------------")
+	for _, el := range fun.FileInDirectory(".") {
+		fmt.Println(el)
+	}
+
 }
