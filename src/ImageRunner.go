@@ -10,14 +10,10 @@ func main() {
 	pathSepia20:="image/lena_sepia20.jpg"
 	pathSepia30:="image/lena_sepia30.jpg"
 	pathSepia40:="image/lena_sepia40.jpg"
+	pathPrewitt:="image/tmp_prewitt.jpg"
+	pathPrewittOut:="image/tmp_prewitt_out.jpg"
+	pathLenaOut:="image/lena_prewitt_out.jpg"
 	rgba := progressing.OpenRGBAImage(path)
-
-	//width := rgba.Rect.Dx()
-	//height := rgba.Rect.Dy()
-	//upLeft := image.Point{0, 0}
-	//lowRight := image.Point{width, height}
-	//result := image.NewRGBA(image.Rectangle{upLeft, lowRight})
-	//cyan := color.RGBA{100, 200, 200, 0xff}
 
 	result:=progressing.TransformationBlackAndWhite(rgba)
 	progressing.SaveImage(pathBW, result,"JPG")
@@ -30,5 +26,16 @@ func main() {
 
 	result=progressing.TransformationSepia(rgba,40)
 	progressing.SaveImage(pathSepia40, result,"JPG")
+
+	mask := []int{1,1, 1,0,0,0,-1,-1,-1}
+
+	result=progressing.Prewitt(rgba,mask)
+	progressing.SaveImage(pathLenaOut, result,"JPG")
+
+	rgbaBlack := progressing.OpenRGBAImage(pathPrewitt)
+
+
+	result=progressing.Prewitt(rgbaBlack,mask)
+	progressing.SaveImage(pathPrewittOut, result,"JPG")
 
 }
